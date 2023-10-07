@@ -32,7 +32,7 @@ public class carTester {
 		
 		//Selecting by model and age
 		
-		System.out.println("Select by make: 'A', 'B', 'C', 'D'");
+		System.out.println("Select by make: 'A', 'B', 'C', 'D'(Case Sensitive)");
 		
 		String ModelSelection = scan.nextLine();
 		
@@ -40,7 +40,7 @@ public class carTester {
 		
 		int AgeSelection = scan.nextInt();
 		
-		Car modelSelect[] = ModelSelect(cars, ModelSelection);		
+		Car modelSelect[] = ModelSelect(cars, ModelSelection.trim());		
 	
 		Car ageNewSelect[] = AgeNewerSelect(modelSelect, AgeSelection);
 		
@@ -81,7 +81,7 @@ public class carTester {
 		int listSize = 0;
 		for(int i = 0 ; i < carsArray.length ; i++)
 		{
-			if(carsArray[i].getMake().equals(Make) )
+			if(carsArray[i].getMake().equalsIgnoreCase(Make) )
 			{
 				listSize++;
 			}
@@ -94,7 +94,7 @@ public class carTester {
 		
 		for(int i = 0 ; i < carsArray.length; i++)
 		{
-			if(carsArray[i].getMake().equals(Make) )
+			if(carsArray[i].getMake().equalsIgnoreCase(Make) )
 			{
 				MakeSplit[splitCounter] = carsArray[i];
 				
@@ -111,7 +111,7 @@ public class carTester {
 		int listSize = 0;
 		for(int i = 0 ; i < carsArray.length ; i++)
 		{
-			if(carsArray[i].getModel().equals(Model) )
+			if(carsArray[i].getModel().equalsIgnoreCase(Model) )
 			{
 				listSize++;
 			}
@@ -122,7 +122,7 @@ public class carTester {
 		
 		for(int i = 0 ; i < carsArray.length; i++)
 		{
-			if(carsArray[i].getModel().equals(Model) )
+			if(carsArray[i].getModel().equalsIgnoreCase(Model) )
 			{
 				ModelSplit[splitCounter] = carsArray[i];
 				
